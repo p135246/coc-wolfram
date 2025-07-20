@@ -1,0 +1,49 @@
+{
+  "name": "coc-wolfram",
+  "version": "1.0.3",
+  "description": "coc.nvim extension for the official Wolfram LSP",
+  "author": "Pavel Hajek <p135246@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "coc.nvim",
+    "wolfram",
+    "mathematica"
+  ],
+  "engines": {
+    "coc": "^0.0.82"
+  },
+  "scripts": {
+    "watch": "node esbuild.mjs --watch",
+    "build": "node esbuild.mjs",
+    "prepare": "node esbuild.mjs"
+  },
+  "devDependencies": {
+    "coc.nvim": "^0.0.83-next.18",
+    "esbuild": "^0.19.8",
+    "typescript": "^5.3.3"
+  },
+  "activationEvents": [
+    "onLanguage:mma",
+    "onLanguage:wl"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "coc-wolfram configuration",
+      "properties": {
+        "coc-wolfram.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable coc-wolfram extension"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "coc-wolfram.Command",
+        "title": "coc-wolfram command title"
+      }
+    ]
+  }
+}
